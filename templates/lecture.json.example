@@ -1,0 +1,31 @@
+{
+ "_설명": "강의 폴더 설정. /필기 가 timeline.txt + 폴더 파일 목록으로 초안을 만들고 사용자 확인 후 저장한다. 경로는 모두 이 폴더 기준 상대경로.",
+ "course": "과목명 (예: 피부감각기) — mp4 파일명 YYYYMMDD_교시_과목_교수 에서 추출",
+ "date": "YYYY-MM-DD",
+ "professor": "교수 이름",
+ "mp4": "녹화본 파일명.mp4",
+ "output_dir": "output",
+ "decks": [
+  {
+   "_설명": "수업(덱) 하나. key 는 영문 ASCII(중간파일 이름·.cmd 인코딩 때문). name 은 output 폴더명·파일명에 쓰이므로 경로에 못 쓰는 문자 금지. display 는 화면 표시용.",
+   "key": "tumor",
+   "name": "피부종양",
+   "display": "피부종양",
+   "period": "3교시",
+   "topic": "피부종양 병리  ← whisper 프롬프트에 들어가는 주제어",
+   "pdf": "오늘 자료.pdf",
+   "pptx": "오늘 자료.pptx  (선택)",
+   "lastyear_note_pdf": "작년 필기.pdf  (선택 — 없으면 전부 '올해 신규')",
+   "lastyear_onepage_pdf": "작년 한장.pdf  (선택)",
+   "video": {"start": "00:12:45", "end": "01:16:15",
+             "_설명": "timeline.txt 의 수업 구간(영상 시각). 슬라이드 검출 범위."},
+   "audio": {"start": "00:12:35", "end": "01:16:25",
+             "_설명": "전사용 wav 구간. 생략하면 video ± config.audio.default_pad_s. start 가 곧 전사 오프셋이라 전사 후에는 절대 바꾸지 말 것."}
+  }
+ ],
+ "params": {
+  "_설명": "선택. detect_thr = 슬라이드 전환 임계(기본 0.06), gap_min_s = 갭 최소 길이(2.0), recheck_lp = 재확인 logprob 임계(-0.55)",
+  "detect_thr": 0.06, "gap_min_s": 2.0, "recheck_lp": -0.55
+ },
+ "index_notes": ["index.html 맨 아래 주석에 덧붙일 문장 (선택, 예: 작년 필기 페이지 밀림 보정 안내)"]
+}

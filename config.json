@@ -1,0 +1,34 @@
+{
+ "_설명": "와벨헬퍼 공통 설정. 강의별 값은 각 강의 폴더의 lecture.json 에 둔다.",
+ "python": "python",
+ "ffmpeg": "ffmpeg",
+ "whisper": {
+  "_설명": "faster-whisper 설정. model 은 HF 모델명(large-v3 = 한국어 정확도 최우선). device/compute_type 실패 시 fallback 으로 재시도.",
+  "model": "large-v3",
+  "device": "cuda",
+  "compute_type": "float16",
+  "fallback": {"device": "cpu", "compute_type": "int8"},
+  "language": "ko",
+  "prompt_template": "의과대학 {course} {topic} 강의입니다. 다음 용어가 자주 나옵니다: {terms}.",
+  "prompt_terms": 45,
+  "vad": {"min_silence_duration_ms": 2000, "speech_pad_ms": 400, "threshold": 0.35}
+ },
+ "audio": {
+  "_설명": "mp4 → wav 추출 형식. default_pad_s 는 lecture.json 에 audio 구간이 없을 때 video 구간 앞뒤에 붙이는 여유(초).",
+  "sample_rate": 16000, "channels": 1, "codec": "pcm_s16le", "default_pad_s": 10
+ },
+ "fonts": {
+  "regular": "C:\\Windows\\Fonts\\malgun.ttf",
+  "bold": "C:\\Windows\\Fonts\\malgunbd.ttf"
+ },
+ "render": {
+  "_설명": "PDF 페이지 렌더 폭(px)·JPEG 품질. match=슬라이드 매칭용, view=HTML용, lastyear=작년 필기 통독용, onepage=작년 한장, tablet=태블릿 HTML 내장용",
+  "match":    {"width": 960,  "quality": 82},
+  "view":     {"width": 1400, "quality": 85},
+  "lastyear": {"width": 1100, "quality": 78},
+  "onepage":  {"width": 1300, "quality": 82},
+  "tablet":   {"width": 720, "quality": 72},
+  "verify_zoom": 2.4,
+  "peek_zoom": 1.5
+ }
+}

@@ -1,0 +1,13 @@
+# Lecture folders (recordings, slides, notes) are never committed — they belong to the lecturers.
+*.mp4
+*.pdf
+*.pptx
+*.wav
+_work/
+output/
+lecture.json
+timeline.txt
+!templates/timeline.txt
+__pycache__/
+*.pyc
+.claude/settings.local.json

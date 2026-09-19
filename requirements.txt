@@ -1,0 +1,13 @@
+# Install into a dedicated venv:  python -m pip install -r requirements.txt
+# ffmpeg must be on PATH. Fonts are set in config.json (defaults to Malgun Gothic on Windows).
+# Pinned on purpose: ctranslate2 >= 4.7 segfaulted and onnxruntime 1.27 failed to load its DLL
+# on the development machine (RTX 3070, Windows 11). Bump with care.
+faster-whisper==1.2.1
+ctranslate2==4.6.0
+onnxruntime==1.20.1
+nvidia-cudnn-cu12==9.24.0.43
+setuptools==80.9.0
+numpy==1.26.4
+pillow==10.3.0
+pypdf==6.14.2
+pymupdf==1.28.2
